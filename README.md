@@ -5,7 +5,7 @@
 <br><br>
 
 <div align="center">
-View and Interact with PDF documents in React, SolidJS, Svelte and JavaScript apps
+عرض ملفات PDF والتفاعل معها في تطبيقات React و SolidJS و Svelte و JavaScript
 <br><br>
 
 [![Actions Status](https://github.com/pdfslick/pdfslick/actions/workflows/publish_site.yml/badge.svg)](https://github.com/pdfslick/pdfslick/actions)
@@ -18,7 +18,7 @@ View and Interact with PDF documents in React, SolidJS, Svelte and JavaScript ap
 
 <br>
 
-[Getting Started](https://pdfslick.dev/docs) | [Examples](https://pdfslick.dev/examples)
+[البدء](https://pdfslick.dev/docs) | [أمثلة](https://pdfslick.dev/examples)
 <br><br>
 
 </div>
@@ -27,12 +27,12 @@ View and Interact with PDF documents in React, SolidJS, Svelte and JavaScript ap
 
 <br>
 
-PDFSlick is a library that enables viewing of and interaction with PDF documents in React, SolidJS, Svelte and JavaScript apps.
-It's build on top of Mozilla's [PDF.js](https://github.com/mozilla/pdf.js), and utilises [Zustand](https://github.com/pmndrs/zustand) to provide a reactive store for the loaded documents.
+PDFSlick هي مكتبة تمكن من عرض والتفاعل مع مستندات PDF في تطبيقات React و SolidJS و Svelte و JavaScript.
+تم بناؤها على أساس [PDF.js](https://github.com/mozilla/pdf.js) من Mozilla، وتستخدم [Zustand](https://github.com/pmndrs/zustand) لتوفير مخزن تفاعلي للمستندات المحملة.
 
-## PDFSlick for React
+## PDFSlick لـ React
 
-To get started with React run:
+للبدء مع React، قم بتشغيل:
 
 ```shell
 npm install @pdfslick/react
@@ -40,15 +40,14 @@ npm install @pdfslick/react
 # pnpm add @pdfslick/react
 ```
 
-You can start using PDFSlick with the `usePDFSlick()` hook, like with the following basic example:
+يمكنك البدء في استخدام PDFSlick باستخدام الخطاف `usePDFSlick()`، كما هو الحال مع المثال الأساسي التالي:
 
 ```jsx
 import { usePDFSlick } from "@pdfslick/react";
 import PDFNavigation from "./yourcomponents/PDFNavigation";
 
 //
-// It is required to include PDFSlick's CSS styles once
-// you can do it in your main `App.tsx` for example
+// من الضروري تضمين أنماط CSS الخاصة بـ PDFSlick بمجرد أن تتمكن من القيام بذلك في ملف `App.tsx` الرئيسي على سبيل المثال
 //
 import "@pdfslick/react/dist/pdf_viewer.css";
 
@@ -65,11 +64,10 @@ const PDFViewerComponent = ({ pdfFilePath }: PDFViewerComponent) => {
   );
 
   /*
-   Access the store with `usePDFSlickStore()` hook — you can pass is
-   as a prop to other components (like with `<PDFNavigation />` below)
-   Toolbars, Sidebars, components which render thumbnails etc. 
-   and use it as here to get and react on 
-   PDF document's and viewer's properties and changes
+   يمكنك الوصول إلى المتجر باستخدام هوك `usePDFSlickStore()` — يمكنك تمرير is
+كدعامة إلى مكونات أخرى (مثل `<PDFNavigation />` أدناه)
+أشرطة الأدوات، والأشرطة الجانبية، والمكونات التي تعرض الصور المصغرة وما إلى ذلك.
+واستخدامها هنا للحصول على خصائص وتعديلات مستندات PDF والعارض والتفاعل معها
    */
   const scale = usePDFSlickStore((s) => s.scale);
   const numPages = usePDFSlickStore((s) => s.numPages);
@@ -81,12 +79,12 @@ const PDFViewerComponent = ({ pdfFilePath }: PDFViewerComponent) => {
         <PDFSlickViewer {...{ viewerRef, usePDFSlickStore }} />
 
         {/*
-          Pass PDFSlick's store to your custom components
+          قم بتمرير متجر PDFSlick إلى مكوناتك المخصصة
         */}
         <PDFNavigation {...{ usePDFSlickStore }} />
 
         {/*
-          PDFSlick's store values automatically update
+          يتم تحديث قيم متجر PDFSlick تلقائيًا
         */}
         <div className="absolute w-full top-0 left-0">
           <p>Current scale: {scale}</p>
@@ -101,11 +99,11 @@ const PDFViewerComponent = ({ pdfFilePath }: PDFViewerComponent) => {
 export default PDFViewerComponent;
 ```
 
-Provided with the PDF Document path and PDFSlick options object, the `usePDFSlick()` hook returns an object consisting (among the other things) of:
+مع مسار مستند PDF وكائن خيارات PDFSlick، يقوم الخطاف `usePDFSlick()` بإرجاع كائن يتكون (من بين أشياء أخرى) من:
 
-- `PDFSlickViewer` is the PDF Viewer component used for viewing the PDF document
-- `viewerRef` is the `ref` callback that is provided as a prop to the `<PDFSlickViewer />` component
-- `usePDFSlickStore` enables using PDFSlick store within your React components
+- `PDFSlickViewer` هو مكون عارض PDF المستخدم لعرض مستند PDF
+- `viewerRef` هو استدعاء `ref` المقدم كدعامة لمكون `<PDFSlickViewer />`
+- `usePDFSlickStore` يمكّن من استخدام متجر PDFSlick داخل مكونات React الخاصة بك
 
 <br>
 
@@ -113,9 +111,9 @@ Provided with the PDF Document path and PDFSlick options object, the `usePDFSlic
 
 <br>
 
-## PDFSlick for SolidJS
+## PDFSlick لـ SolidJS
 
-To get started with PDFSlick for SolidJS run:
+للبدء مع PDFSlick لـ SolidJS، قم بتشغيل:
 
 ```shell
 npm install @pdfslick/solid
@@ -123,7 +121,7 @@ npm install @pdfslick/solid
 # pnpm add @pdfslick/solid
 ```
 
-You can start using PDFSlick with the `usePDFSlick()` hook, like with the following basic example:
+يمكنك البدء في استخدام PDFSlick باستخدام الخطاف `usePDFSlick()`، كما هو الحال مع المثال الأساسي التالي:
 
 ```jsx
 import { Component, createSignal } from "solid-js";
@@ -131,8 +129,7 @@ import { usePDFSlick } from "@pdfslick/solid";
 import PDFNavigation from "./yourcomponents/PDFNavigation";
 
 //
-// It is required to include PDFSlick's CSS styles once
-// you can do it in your main `App.tsx` for example
+// من الضروري تضمين أنماط CSS الخاصة بـ PDFSlick بمجرد أن تتمكن من القيام بذلك في ملف `App.tsx` الرئيسي على سبيل المثال
 //
 import "@pdfslick/solid/dist/pdf_viewer.css";
 
@@ -190,9 +187,9 @@ Provided with the PDF Document path and options object, the `usePDFSlick()` hook
 
 <br>
 
-## PDFSlick for Svelte
+## PDFSlick لـ Svelte
 
-To get started with PDFSlick for Svelte run:
+للبدء مع PDFSlick لـ Svelte، قم بتشغيل:
 
 ```shell
 npm install @pdfslick/core
@@ -210,29 +207,29 @@ You can load a PDF document and subscribe to a portion of or the entire PDFSlick
   // ...
 
   /**
-   * Reference to the PDF Viewer container
+   * مرجع إلى حاوية عارض PDF
    */
   let container: HTMLDivElement;
 
   /**
-   * Reference to the pdfSlick instance
+   * مرجع إلى مثيل pdfSlick
    */
   let pdfSlick: PDFSlick;
 
   /**
-   * Keep PDF Slick state portions we're interested in using in your app
+   * احتفظ بأجزاء حالة PDF Slick التي نرغب في استخدامها في تطبيقك
    */
   let pageNumber = 1;
   let numPages = 0;
 
   onMount(async () => {
     /**
-     * This is all happening on client side, so we'll make sure we only load it there
+     * يحدث كل هذا على جانب العميل، لذا سنتأكد من تحميله هناك فقط
      */
     const { create, PDFSlick } = await import('@pdfslick/core');
 
     /**
-     * Create the PDF Slick store 
+     * إنشاء متجر PDF Slick
      */
     const store = create();
 
@@ -245,16 +242,15 @@ You can load a PDF document and subscribe to a portion of or the entire PDFSlick
     });
 
     /**
-     * Load the PDF document
+     * تحميل مستند PDF
      */
     pdfSlick.loadDocument(url);
     store.setState({ pdfSlick });
 
     /**
-     * Subscribe to state changes, and keep values of interest as reactive Svelte vars, 
-     * (or alternatively we could hook these or entire PDF state into a Svelte store)
-     * 
-     * Also keep reference of the unsubscribe function we call on component destroy
+     الاشتراك في تغييرات الحالة، والاحتفاظ بقيم الاهتمام كمتغيرات Svelte تفاعلية، (أو بدلاً من ذلك يمكننا ربط هذه الحالة أو حالة PDF بأكملها بمتجر Svelte)
+     
+     احتفظ أيضًا بمرجع لوظيفة إلغاء الاشتراك التي نستدعيها لتدمير المكون
      */
     unsubscribe = store.subscribe((s) => {
       pageNumber = s.pageNumber;
@@ -273,8 +269,7 @@ You can load a PDF document and subscribe to a portion of or the entire PDFSlick
 
   <div class="flex-1 relative h-full" id="container">
     <!--
-      The important part —
-      we use the reference to this `container` when creating PDF Slick instance above
+      الجزء المهم - نستخدم المرجع إلى هذه "الحاوية" عند إنشاء مثيل PDF Slick أعلاه
     -->
     <div id="viewerContainer" class="pdfSlickContainer absolute inset-0 overflow-auto" bind:this={container}>
       <div id="viewer" class="pdfSlickViewer pdfViewer"></div>
@@ -283,19 +278,19 @@ You can load a PDF document and subscribe to a portion of or the entire PDFSlick
 
   <!-- ... -->
 
-  <!-- Use `pdfSlick`, `pageNumber` and `numPages` to create PDF pagination -->
+  <!-- استخدم `pdfSlick` و`pageNumber` و`numPages` لإنشاء ترقيم صفحات PDF -->
   <div class="flex justify-center">
     <button
       on:click={() => pdfSlick?.gotoPage(Math.max(pageNumber - 1, 1))}
       disabled={pageNumber <= 1}
 		>
-      Show Previous Page
+      إظهار الصفحة السابقة
     </button>
     <button
       on:click={() =>  pdfSlick?.gotoPage(Math.min(pageNumber + 1, numPages))}
       disabled={pageNumber >= numPages}
     >
-      Show Next Page
+      إظهار الصفحة التالية
     </button>
   </div>
 
@@ -306,25 +301,25 @@ You can load a PDF document and subscribe to a portion of or the entire PDFSlick
 
 <br>
 
-[More on using PDFSlick with Svelte](https://pdfslick.dev/docs/svelte) | [Checkout the Svelte Examples](./apps/svelteweb/src)
+[المزيد حول استخدام PDFSlick مع Svelte](https://pdfslick.dev/docs/svelte) | [قم بإلقاء نظرة على أمثلة Svelte](./apps/svelteweb/src)
 
 <br>
 
-## Motivation
+## الدافع
 
-[PDF.js](https://github.com/mozilla/pdf.js) is an amazing piece of software. It is also a very stable and mature one — it powers the PDF viewer in Mozilla Firefox and it's been around since 2011. However, it's all Vanilla JavaScript, and when it comes to using it with libraries like React and SolidJS (although possible) it's a litte bit hard in terms of integrating it in these Component- and reactive-like environments. PDFSlick attempts to wrap all of that fascinating functionality into one that is easier to fit in React and SolidJS worlds — as components and a reactive store.
+[PDF.js](https://github.com/mozilla/pdf.js) هو برنامج رائع. كما أنه مستقر وناضج - فهو يشغل عارض PDF في Mozilla Firefox وموجود منذ عام 2011. ومع ذلك، فهو مكتوب بـ JavaScript الأساسي، وعندما يتعلق الأمر باستخدامه مع مكتبات مثل React و SolidJS (على الرغم من إمكانية ذلك) فإنه صعب قليلاً من حيث دمجه في هذه البيئات القائمة على المكونات والتفاعلية. يحاول PDFSlick تغليف كل هذه الوظائف الرائعة في شكل يسهل دمجه في عالم React و SolidJS - كمكونات ومخزن تفاعلي.
 
-## Core Concepts
+## المفاهيم الأساسية
 
-The core of PDFSlick is within the `@pdfslick/core` package. It wraps `PDF.js`'s functionality and links it to the store. This `@pdfslick/core` package is the basis for the React and SolidJS packages, which additionally transform the store and make it suitable for the adequate library, as well as providing components for the PDF viewer and thumbnails.
+جوهر PDFSlick موجود في حزمة `@pdfslick/core`. إنها تغلف وظائف `PDF.js` وتربطها بالمخزن. حزمة `@pdfslick/core` هذه هي الأساس لحزم React و SolidJS، والتي تقوم بتحويل المخزن وجعله مناسبًا للمكتبة المناسبة، بالإضافة إلى توفير مكونات لعارض PDF والصور المصغرة.
 
-Depending on your needs, at this you might find it useful to continue with learning more about using PDFSlick with React and SolidJS respsectivelly. However, if really interested you can learn more about using PDFSlick's `@pdfslick/core` package with Vanilla JS apps and with libraries other than React and SolidJS in the sections below.
+اعتمادًا على احتياجاتك، قد تجد أنه من المفيد في هذه المرحلة مواصلة التعرف على المزيد حول استخدام PDFSlick مع React و SolidJS على التوالي. ومع ذلك، إذا كنت مهتمًا حقًا، يمكنك معرفة المزيد حول استخدام حزمة `@pdfslick/core` الخاصة بـ PDFSlick مع تطبيقات JavaScript الأساسية ومع المكتبات الأخرى غير React و SolidJS في الأقسام أدناه.
 
 <br>
 
-[Learn more about PDFSlick](https://pdfslick.dev) | [Checkout the Examples](https://pdfslick.dev/examples)
+[تعرف على المزيد عن PDFSlick](https://pdfslick.dev) | [تحقق من الأمثلة](https://pdfslick.dev/examples)
 
-## Thanks
+## شكر وتقدير
 
-- [Vane Kosturanov](https://kosturanov.com/portfolio/logo-branding-design) for designing the logo
-- [VS Code Icons](https://github.com/microsoft/vscode-codicons) for the icons used throughout the examples
+- [Vane Kosturanov](https://kosturanov.com/portfolio/logo-branding-design) لتصميم الشعار
+- [VS Code Icons](https://github.com/microsoft/vscode-codicons) للأيقونات المستخدمة في جميع الأمثلة
