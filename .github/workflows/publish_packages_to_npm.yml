@@ -20,10 +20,13 @@ jobs:
         with:
           node-version-file: ".nvmrc"
           registry-url: "https://registry.npmjs.org"
+
+      # npm >= 11.5.1 required for OIDC trusted publishing;
+      # keep in sync with packageManager in package.json
+      - name: Update npm
+        run: npm install -g npm@12.0.2
       - name: Clean Install
         run: npm ci
       - name: Build
         run: npm run build
       - run: npm run publish-packages
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

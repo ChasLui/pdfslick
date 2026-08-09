@@ -1,5 +1,46 @@
 # @pdfslick/react
 
+## 4.0.2
+
+### Patch Changes
+
+- Version bump to keep `@pdfslick/react` in lockstep with `@pdfslick/core` 4.0.2 and raise its core dependency floor to `^4.0.2`, so this release's core fixes reach react consumers.
+- Updated dependencies
+- Updated dependencies
+- Updated dependencies
+  - @pdfslick/core@4.0.2
+
+## 4.0.1
+
+### Patch Changes
+
+- Release to pick up the `@pdfslick/core` fix that ships pdf.js's worker file next to the built bundles, and raise the `@pdfslick/core` dependency floor to `^4.0.1` so the fix reaches consumers whose lockfile has `@pdfslick/core@4.0.0` pinned. No public API change.
+- Updated dependencies
+  - @pdfslick/core@4.0.1
+
+## 4.0.0
+
+### Major Changes
+
+- Update to pdfjs v6
+
+### Patch Changes
+
+- Remove the `react-use` runtime dependency. `useMeasure` and `useDebounce` are now implemented locally (`ResizeObserver` + `setTimeout`), eliminating the transitive `js-cookie` advisory (GHSA-qjx8-664m-686j) for consumers and dropping several transitive dependencies. No public API change.
+- Updated dependencies
+  - @pdfslick/core@4.0.0
+
+## 3.1.0
+
+### Minor Changes
+
+- Fix styles for dark mode, add props related to canvas resolution, add detail view render
+
+### Patch Changes
+
+- Updated dependencies
+  - @pdfslick/core@3.1.0
+
 ## 3.0.0
 
 ### Major Changes

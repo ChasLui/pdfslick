@@ -8,6 +8,14 @@ export const examples = [
       "Full Interactive App with page thumbnails, document outline and attachments in the sidebar, and a toolbar with a wide set of functions including zoom in/out, page navigation, rotation, drawing and adding text annotation etc.",
   },
   {
+    name: "Comments",
+    href: "/examples/comments",
+    imageSrc: "/assets/examples/PDFSlick_Comments.png",
+    short: "Comments in PDF",
+    description:
+      "Comments in PDF",
+  },
+  {
     name: "Multiple PDF Documents",
     href: "/examples/multiple-documents",
     imageSrc: "/assets/examples/PDFSlick_View_Multiple_Documents.jpg",

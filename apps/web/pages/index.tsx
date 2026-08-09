@@ -66,7 +66,7 @@ export default function Example() {
       <Header />
       <div className="relative pt-14">
         <div
-          className="absolute transition-all duration-[5000ms] ease-linear inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          className="absolute transition-all duration-5000 ease-linear inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           style={{
             transform: `rotate(${rotation}deg) scale(${scale}) translate(${x}px,${y}px)`,
           }}
@@ -74,7 +74,7 @@ export default function Example() {
         >
           <div
             className={clsx(
-              "relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+              "relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75",
             )}
             style={{
               clipPath:
@@ -96,19 +96,20 @@ export default function Example() {
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <Link
                   href="/docs"
-                  className="rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Get started
                 </Link>
               </div>
             </div>
+
             <div className="mt-16 flow-root sm:mt-24">
-              <div className="-m-2 relative rounded-xl bg-gradient-to-tr from-pink-50 to-violet-50 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 aspect-[16/9] flex flex-col">
+              <div className="-m-2 relative rounded-xl bg-linear-to-tr from-pink-50 to-violet-50 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 aspect-16/9 flex flex-col">
                 <div className="bg-slate-50 rounded-md shadow-2xl ring-1 w-full flex-1 ring-gray-900/10">
                   <div className="mt-16 sm:mt-20">
                     <div className="relative max-w-3xl px-4 sm:px-6 lg:px-8 mx-auto sm:text-center">
                       <h1 className="mt-6 text-[2.5rem] leading-none sm:text-6xl tracking-tight font-bold text-slate-800">
-                        See it in Action
+                        Check it out in action
                       </h1>
                       <p className="mt-4 text-lg text-slate-600">
                         Embrace PDFs as you would any other part of your React,
@@ -127,8 +128,8 @@ export default function Example() {
                             <div className="h-full rounded-lg p-3 ring-1 ring-inset ring-slate-200 bg-stone-100">
                               <div
                                 className={clsx(
-                                  "aspect-[16/9] w-full overflow-hidden rounded  group-hover:opacity-75 shadow-sm border border-slate-300",
-                                  "group-hover:shadow-md"
+                                  "aspect-16/9 w-full overflow-hidden rounded  group-hover:opacity-75 shadow-sm border border-slate-300",
+                                  "group-hover:shadow-md",
                                 )}
                               >
                                 <img
@@ -160,7 +161,7 @@ export default function Example() {
           aria-hidden="true"
         >
           <div
-            className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            className="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"
             style={{
               clipPath:
                 "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
